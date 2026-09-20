@@ -13,7 +13,9 @@ import PortfolioValueChart from "../components/PortfolioValueChart";
 import Footer from "../components/Footer";
 import Toast from "../components/Toast";
 import useToast from "../hooks/useToast";
-import { INITIAL_NOTIFS, SECTORS, SERIES, monthLabel } from "../data/analyticsData";
+import { INITIAL_NOTIFS, SECTORS, SERIES, monthLabel, TAB_CONFIG } from "../data/analyticsData";
+import AnalysisTable from "../components/AnalysisTable";
+import AllocationChart from "../components/AllocationChart";
 
 const COMPARE_LABELS = {
   "Previous Period": "previous period",
@@ -149,10 +151,20 @@ export default function Analytics() {
         </div>
 
         <div className="row r3">
-          <SectorPerformance rows={sectorRows} />
-          <TopProjects applied={applied} onViewAll={() => toast("Opening the full project risk register")} />
-          <PortfolioValueChart />
-        </div>
+  {tab === "Sector Analysis" ? (
+    <>
+      <SectorPerformance rows={sectorRows} />
+      <TopProjects applied={applied} onViewAll={() => toast("Opening the full project risk register")} />
+      <PortfolioValueChart />
+    </>
+  ) : (
+    <>
+      <AnalysisTable rows={TAB_CONFIG[tab].rows} labelHeader={TAB_CONFIG[tab].labelHeader} title={TAB_CONFIG[tab].perfTitle} />
+      <TopProjects applied={applied} onViewAll={() => toast("Opening the full project risk register")} />
+      <AllocationChart rows={TAB_CONFIG[tab].rows} title={TAB_CONFIG[tab].pvTitle} />
+    </>
+  )}
+</div>
       </div>
 
       <Footer />

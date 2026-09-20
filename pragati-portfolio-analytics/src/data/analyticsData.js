@@ -31,6 +31,45 @@ export const SECTORS = [
  {name:"Others",               color:"#A3AEBB", total:123, hc:18,  hcTxt:"18 (15%)",  value:2.8,  risk:28, dir:"down", trend:"-8%"}
 ];
 
+
+export const MINISTRIES = [
+ {name:"Road Transport & Highways",   color:"#2E7CC4", total:426, hc:142, hcTxt:"142 (33%)", value:12.4, risk:72, dir:"up",   trend:"+14%"},
+ {name:"Railways",                    color:"#F0942C", total:319, hc:98,  hcTxt:"98 (31%)",  value:8.9,  risk:58, dir:"up",   trend:"+10%"},
+ {name:"Housing & Urban Affairs",     color:"#27A567", total:284, hc:76,  hcTxt:"76 (27%)",  value:6.7,  risk:46, dir:"up",   trend:"+18%"},
+ {name:"Power",                       color:"#E0483B", total:248, hc:62,  hcTxt:"62 (25%)",  value:5.1,  risk:42, dir:"up",   trend:"+8%"},
+ {name:"Jal Shakti",                  color:"#A855C7", total:160, hc:34,  hcTxt:"34 (21%)",  value:3.8,  risk:38, dir:"up",   trend:"+6%"},
+ {name:"Ports, Shipping & Waterways", color:"#17A8B8", total:124, hc:22,  hcTxt:"22 (18%)",  value:2.9,  risk:35, dir:"down", trend:"-4%"},
+ {name:"Civil Aviation",              color:"#8296AC", total:89,  hc:16,  hcTxt:"16 (18%)",  value:2.1,  risk:32, dir:"down", trend:"-6%"},
+ {name:"Other Ministries",            color:"#A3AEBB", total:123, hc:18,  hcTxt:"18 (15%)",  value:2.8,  risk:28, dir:"down", trend:"-8%"}
+];
+
+export const STATE_ANALYSIS = [
+ {name:"Maharashtra",    color:"#2E7CC4", total:298, hc:88, hcTxt:"88 (30%)", value:9.6, risk:68, dir:"up",   trend:"+12%"},
+ {name:"Uttar Pradesh",  color:"#F0942C", total:246, hc:71, hcTxt:"71 (29%)", value:7.2, risk:61, dir:"up",   trend:"+9%"},
+ {name:"Tamil Nadu",     color:"#27A567", total:198, hc:48, hcTxt:"48 (24%)", value:5.4, risk:49, dir:"up",   trend:"+15%"},
+ {name:"Karnataka",      color:"#E0483B", total:176, hc:41, hcTxt:"41 (23%)", value:4.6, risk:44, dir:"up",   trend:"+7%"},
+ {name:"Andhra Pradesh", color:"#A855C7", total:154, hc:33, hcTxt:"33 (21%)", value:3.9, risk:41, dir:"up",   trend:"+5%"},
+ {name:"Gujarat",        color:"#17A8B8", total:142, hc:26, hcTxt:"26 (18%)", value:3.1, risk:36, dir:"down", trend:"-3%"},
+ {name:"West Bengal",    color:"#8296AC", total:118, hc:19, hcTxt:"19 (16%)", value:2.3, risk:31, dir:"down", trend:"-5%"},
+ {name:"Other States",   color:"#A3AEBB", total:441, hc:61, hcTxt:"61 (14%)", value:2.6, risk:26, dir:"down", trend:"-9%"}
+];
+
+export const PORTFOLIO_TRENDS = [
+ {name:"Q2 FY 2026-27", color:"#2E7CC4", total:1773, hc:301, hcTxt:"301 (17%)", value:38.7, risk:54, dir:"up",   trend:"+6%"},
+ {name:"Q1 FY 2026-27", color:"#F0942C", total:1712, hc:278, hcTxt:"278 (16%)", value:36.4, risk:51, dir:"up",   trend:"+4%"},
+ {name:"Q4 FY 2025-26", color:"#27A567", total:1649, hc:255, hcTxt:"255 (15%)", value:34.2, risk:49, dir:"up",   trend:"+3%"},
+ {name:"Q3 FY 2025-26", color:"#E0483B", total:1588, hc:231, hcTxt:"231 (15%)", value:32.5, risk:47, dir:"down", trend:"-2%"},
+ {name:"Q2 FY 2025-26", color:"#A855C7", total:1534, hc:219, hcTxt:"219 (14%)", value:30.8, risk:48, dir:"up",   trend:"+2%"},
+ {name:"Q1 FY 2025-26", color:"#17A8B8", total:1487, hc:208, hcTxt:"208 (14%)", value:29.1, risk:47, dir:"up",   trend:"+1%"}
+];
+
+/* which dataset + labels the bottom row uses per active tab */
+export const TAB_CONFIG = {
+  "Sector Analysis":  { rows: SECTORS,         labelHeader: "Sector",   perfTitle: "Sector Performance",          pvTitle: "Portfolio Value by Sector" },
+  "Ministry Analysis":{ rows: MINISTRIES,      labelHeader: "Ministry", perfTitle: "Ministry Performance",        pvTitle: "Portfolio Value by Ministry" },
+  "State Analysis":   { rows: STATE_ANALYSIS,  labelHeader: "State",    perfTitle: "State Performance",           pvTitle: "Portfolio Value by State" },
+  "Portfolio Trends": { rows: PORTFOLIO_TRENDS,labelHeader: "Period",   perfTitle: "Portfolio Trend Summary",     pvTitle: "Portfolio Value by Quarter" },
+};
 /* anchor values (bi-monthly, Apr 2024 -> Apr 2026) for the six charted sectors */
 export const TREND = [
  {name:"Road Transport",       color:"#2E7CC4", a:[44,50,48,52,55,57,58,60,62,64,66,70,72]},
